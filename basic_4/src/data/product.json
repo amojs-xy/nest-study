@@ -1,0 +1,5 @@
+[
+  { "id": "1", "name": "黄芪", "price": 30, "unit": "斤", "remaining": 50 },
+  { "id": "2", "name": "当归", "price": 25, "unit": "斤", "remaining": 20 },
+  { "id": "3", "name": "西洋参", "price": 70, "unit": "斤", "remaining": 2 }
+]
