@@ -6,7 +6,7 @@ export class ProductOrderService {
     constructor (private readonly productOrderRepo: ProductOrderRepository) {}
 
     public createOrder (productId: string, userId: string, quantity: number) {
-        const productInfo = this.productOrderRepo.checkOrderInvalid(productId, quantity);
+        const productInfo = this.productOrderRepo.checkOrderValid(productId, quantity);
 
         if (productInfo.product === null) return null;
 

@@ -4,7 +4,7 @@ import { Product, ProductOrder } from "src/typing/product";
 
 @Injectable()
 export class ProductOrderRepository {
-    public checkOrderInvalid (productId: string, quantity: number) {
+    public checkOrderValid (productId: string, quantity: number) {
         const productData = JSON.parse(readFileSync('src/data/product.json', 'utf8')) as Product[];
 
         const productInfo = productData.find(product => product.id === productId);

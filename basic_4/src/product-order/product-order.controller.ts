@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, NotFoundException, Post } from '@nestjs/common';
 import { ProductOrderService } from './product-order.service';
 import { ProductOrder } from 'src/typing/product';
 import { Response } from 'src/typing/app';
@@ -15,10 +15,11 @@ export class ProductOrderController {
         const orderInfo = this.productOrderService.createOrder(productId, userId, quantity);
 
         if (orderInfo === null) {
-           return {
-              code: 1,
-              msg: '未找到该产品'
-           }
+        //    return {
+        //       code: 1,
+        //       msg: '未找到该产品'
+        //    }
+              throw new NotFoundException('未找到该产品');
         }
 
         if (orderInfo === 0) {
